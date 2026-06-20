@@ -270,11 +270,26 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── HERO ─── */
 /*
-  Layout: position:relative, min-height 100svh.
-  Imagen: full-bleed absoluta, object-position right bottom
-          → escritorio a la derecha, área izquierda despejada para el texto.
-  Título: centrado vertical y horizontal (absoluto sobre la imagen).
-  Footer: anclado al pie-izquierdo con position:absolute.
+  Composición editorial en 3 capas:
+  -1  imagen full-bleed (escritorio derecha, zona izq libre)
+   0  fondo color por si imagen tarda en cargar
+   1  bloque tipográfico + footer de texto
+
+  El hero se divide verticalmente así:
+  ┌──────────────────────────────────┐
+  │  nav (80px)                      │
+  │  padding-top gap al menú         │
+  │  CONSERVAMOS. TRANSFORMAMOS.     │  ← título grande, alineado izq, ~30% más chico
+  │  Restauramos.                    │  ← gap mínimo respecto a las anteriores
+  │  [gap pequeño]                   │
+  │  descripción                     │  ← pegada al título
+  │  botones                         │  ← pegados a descripción
+  │  [espacio hasta que la foto      │
+  │   llena el resto del hero]       │
+  └──────────────────────────────────┘
+
+  object-position: 65% bottom  →  escritorio centrado-derecha,
+  superficie de la mesa queda a la altura de "Restauramos."
 */
 .hero {
   position: relative;
@@ -290,8 +305,8 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* escritorio hacia la derecha; zona izquierda queda libre para el texto */
-  object-position: right bottom;
+  /* 65% horizontal: escritorio visible a la derecha con espacio libre izq */
+  object-position: 65% bottom;
   z-index: 0;
   pointer-events: none;
   opacity: 0;
@@ -302,17 +317,19 @@ a { color: inherit; text-decoration: none; }
   to   { opacity: 1; }
 }
 
-/* Título — centrado en el hero */
+/* Contenedor del bloque tipográfico completo
+   — fluye desde arriba (después del nav) hacia abajo
+   — alineado a la izquierda, con margen izquierdo editorial */
 .hero__center {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   z-index: 1;
-  padding: 0 var(--gutter);
-  /* empujar levemente hacia arriba para compensar el footer */
-  padding-bottom: clamp(6rem, 12vw, 10rem);
+  padding-top: clamp(4rem, 8vw, 7rem);        /* distancia al nav */
+  padding-left: clamp(1.25rem, 5vw, 4.5rem);  /* margen izq editorial */
+  padding-right: clamp(1.25rem, 5vw, 4.5rem);
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 /* Bloque de título */
@@ -320,16 +337,16 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   gap: 0;
-  line-height: 0.95;
-  text-align: center;
+  line-height: 0.93;
 }
 
-/* CONSERVAMOS. / TRANSFORMAMOS. — Raleway Black */
+/* CONSERVAMOS. / TRANSFORMAMOS. — Raleway Black
+   ~30% más chico que antes (7.5vw → 5.2vw, tope 8rem → 5.6rem) */
 .hero__title--conservamos,
 .hero__title--transformamos {
   font-family: var(--font-raleway);
   font-weight: 900;
-  font-size: clamp(3rem, 7.5vw, 8rem);
+  font-size: clamp(2rem, 5.2vw, 5.6rem);
   letter-spacing: -0.02em;
   color: var(--ink);
   text-transform: uppercase;
@@ -339,40 +356,40 @@ a { color: inherit; text-decoration: none; }
 .hero__title--conservamos  { animation-delay: 0.4s; }
 .hero__title--transformamos { animation-delay: 0.55s; }
 
-/* Restauramos. — Cormorant Garamond Medium Italic */
+/* Restauramos. — Cormorant Garamond Medium Italic
+   Gap negativo respecto a TRANSFORMAMOS para unirlas visualmente */
 .hero__title--restauramos {
   font-family: var(--font-cormorant);
   font-weight: 500;
   font-style: italic;
-  font-size: clamp(2.8rem, 7vw, 7.5rem);
-  letter-spacing: 0;
+  font-size: clamp(1.9rem, 4.9vw, 5.2rem);
+  letter-spacing: 0.01em;
   color: var(--ink);
-  /* solo primera letra mayúscula → se escribe así en el HTML */
+  margin-top: -0.05em;   /* cierra el espacio visual con la línea anterior */
   opacity: 0;
   animation: fadeUp 0.9s 0.7s var(--ease-out-expo) forwards;
 }
 
-/* Footer anclado al pie-izquierdo */
+/* Descripción + botones — bloque único pegado al título */
 .hero__footer {
-  position: absolute;
-  bottom: clamp(2.5rem, 5vw, 4rem);
-  left: clamp(1.25rem, 6vw, 5rem);
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
+  margin-top: clamp(1.2rem, 2.5vw, 2rem);  /* distancia al título */
+  z-index: 1;
+  position: relative;
 }
 
 /* Descripción */
 .hero__desc {
   font-family: var(--font-raleway);
-  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  font-size: clamp(0.65rem, 0.85vw, 0.78rem);
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink);
   line-height: 1.75;
-  max-width: 36ch;
+  max-width: 38ch;
   opacity: 0;
   animation: fadeUp 0.8s 0.9s var(--ease-out-expo) forwards;
 }
@@ -871,7 +888,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr 1fr; min-height: 85vh; }
+  .hero { min-height: 85vh; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
   .proceso__steps { grid-template-columns: repeat(2, 1fr); }
   .proyectos__grid { grid-template-columns: repeat(2, 1fr); }
@@ -918,16 +935,15 @@ a { color: inherit; text-decoration: none; }
 
   /* Hero mobile */
   .hero { min-height: 100svh; }
-  .hero__center { padding-bottom: clamp(9rem, 20vw, 14rem); padding-inline: 1.25rem; }
-  .hero__title--conservamos,
-  .hero__title--transformamos { font-size: clamp(2rem, 10vw, 4rem); }
-  .hero__title--restauramos   { font-size: clamp(1.9rem, 9.5vw, 3.8rem); }
-  .hero__footer {
-    left: 1.25rem;
-    right: 1.25rem;
-    bottom: 2rem;
+  .hero__center {
+    padding-top: clamp(3rem, 10vw, 5rem);
+    padding-inline: 1.25rem;
   }
-  .hero__desc { max-width: 100%; font-size: 0.72rem; }
+  .hero__title--conservamos,
+  .hero__title--transformamos { font-size: clamp(1.8rem, 9vw, 3.2rem); }
+  .hero__title--restauramos   { font-size: clamp(1.7rem, 8.5vw, 3rem); }
+  .hero__footer { margin-top: 1rem; }
+  .hero__desc { max-width: 100%; font-size: 0.7rem; }
 
   .filosofia__layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .stats__grid { grid-template-columns: 1fr 1fr; }
@@ -944,9 +960,9 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   .stats__grid { grid-template-columns: 1fr; }
   .hero__actions { flex-direction: column; align-items: flex-start; }
-  .hero__title--construimos,
-  .hero__title--transformamos { font-size: 2.2rem; }
-  .hero__title--restauramos { font-size: 2.4rem; }
+  .hero__title--conservamos,
+  .hero__title--transformamos { font-size: 1.7rem; }
+  .hero__title--restauramos   { font-size: 1.6rem; }
 }
 
 /* ─── REDUCED MOTION ─── */
