@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAÍZ — Restauración de Muebles</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Raleway:wght@300;400;500;600&family=Trirong:ital,wght@0,700;0,900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <!-- Logo izquierda -->
+    <a href="#inicio" class="nav__logo">RAÍZ</a>
+
+    <!-- Menú centrado -->
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#inicio"    class="nav__item" data-section="inicio">INICIO</a></li>
+      <li><a href="#proyectos" class="nav__item" data-section="proyectos">PROYECTOS</a></li>
+      <li><a href="#que-hacemos" class="nav__item" data-section="que-hacemos">QUÉ HACEMOS</a></li>
+      <li><a href="#sobre-raiz"  class="nav__item" data-section="sobre-raiz">SOBRE RAÍZ</a></li>
+      <li><a href="#contacto"    class="nav__item nav__cta" data-section="contacto">CONTACTO</a></li>
+    </ul>
+
+    <!-- Burger mobile -->
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+
+    <!-- SVG "Raíz" animada de fondo -->
+    <div class="hero__raiz-bg" aria-hidden="true">
+      <img src="assets/raiz-word.svg" alt="" class="hero__raiz-svg" />
+    </div>
+
+    <!-- Contenido izquierdo -->
+    <div class="hero__content">
+      <h1 class="hero__title">
+        <span class="hero__title--construimos">CONSTRUIMOS.</span>
+        <span class="hero__title--transformamos">TRANSFORMAMOS.</span>
+        <span class="hero__title--restauramos">RESTAURAMOS.</span>
+      </h1>
+      <p class="hero__desc">
+        RESTAURAMOS MUEBLES CON HISTORIA PARA DARLES<br>
+        UNA NUEVA VIDA EN EL PRESENTE.
+      </p>
+      <div class="hero__actions">
+        <a href="#contacto" class="btn btn--primary">
+          ESCRIBINOS
+          <span class="btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </span>
+        </a>
+        <a href="#proyectos" class="btn btn--ghost">
+          PROYECTOS
+          <span class="btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Imagen mueble derecha -->
+    <div class="hero__image-wrap">
+      <img
+        src="assets/escritorio-hero.png"
+        alt="Escritorio de madera restaurado en taller RAÍZ"
+        class="hero__image"
+      />
+    </div>
+
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Restauración</span>
+      <span class="marquee__dot">·</span>
+      <span>Diseño</span>
+      <span class="marquee__dot">·</span>
+      <span>Madera Maciza</span>
+      <span class="marquee__dot">·</span>
+      <span>Transformación</span>
+      <span class="marquee__dot">·</span>
+      <span>Oficio</span>
+      <span class="marquee__dot">·</span>
+      <span>Permanencia</span>
+      <span class="marquee__dot">·</span>
+      <span>Restauración</span>
+      <span class="marquee__dot">·</span>
+      <span>Diseño</span>
+      <span class="marquee__dot">·</span>
+      <span>Madera Maciza</span>
+      <span class="marquee__dot">·</span>
+      <span>Transformación</span>
+      <span class="marquee__dot">·</span>
+      <span>Oficio</span>
+      <span class="marquee__dot">·</span>
+      <span>Permanencia</span>
+      <span class="marquee__dot">·</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item" data-count="340">
+          <span class="stats__number" data-target="340">0</span>
+          <span class="stats__plus">+</span>
+          <p class="stats__label">Piezas restauradas</p>
+        </div>
+        <div class="stats__item" data-count="16">
+          <span class="stats__number" data-target="16">0</span>
+          <p class="stats__label">Años de oficio</p>
+        </div>
+        <div class="stats__item" data-count="24">
+          <span class="stats__number" data-target="24">0</span>
+          <p class="stats__label">Especies nativas trabajadas</p>
+        </div>
+        <div class="stats__item">
+          <span class="stats__number stats__number--text">100%</span>
+          <p class="stats__label">Madera maciza</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILOSOFÍA -->
+  <span id="que-hacemos" style="position:absolute;top:-80px;"></span>
+  <section class="filosofia" id="filosofia" data-section-alias="que-hacemos">
+    <div class="container">
+      <div class="filosofia__layout">
+        <div class="filosofia__left">
+          <p class="section-eyebrow">Filosofía</p>
+          <h2 class="filosofia__title">
+            La restauración<br>como un <em>acto<br>de diseño.</em>
+          </h2>
+        </div>
+        <div class="filosofia__right">
+          <p class="filosofia__body">
+            Los objetos acumulan experiencias, usos y significados a lo largo del tiempo. Restaurar no consiste en devolver un mueble a su estado anterior. Consiste en leer su historia, comprenderla y construir una nueva etapa.
+          </p>
+          <p class="filosofia__body">
+            RAÍZ trabaja en el cruce entre dos mundos que suelen aparecer separados: la precisión técnica del oficio artesanal y la sensibilidad estética del diseño contemporáneo. Esa tensión es el núcleo de cada intervención.
+          </p>
+          <blockquote class="filosofia__quote">
+            "Los muebles no terminan su historia cuando envejecen. <br>
+            <em>A través de una intervención consciente, pueden seguir habitando el presente.</em>"
+          </blockquote>
+        </div>
+      </div>
+      <!-- Imagen grande editorial -->
+      <div class="filosofia__img-wrap reveal">
+        <div class="filosofia__img-placeholder">
+          <div class="filosofia__img-overlay"></div>
+          <div class="filosofia__img-caption">Proceso de intervención sobre nogal macizo · Buenos Aires</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="proceso" id="proceso">
+    <div class="container">
+      <p class="section-eyebrow">Proceso</p>
+      <h2 class="proceso__title">
+        Cómo <em>trabajamos</em>
+      </h2>
+      <div class="proceso__steps">
+
+        <div class="proceso__step reveal">
+          <div class="proceso__step-header">
+            <span class="proceso__step-num">I</span>
+            <h3 class="proceso__step-name">Lectura del objeto</h3>
+          </div>
+          <p class="proceso__step-desc">
+            Antes de intervenir, escuchamos. Analizamos la pieza: su origen, técnicas constructivas, marcas de uso y el patrimonio cultural que representa. Ese diagnóstico define el camino.
+          </p>
+          <div class="proceso__step-img proceso__step-img--1"></div>
+        </div>
+
+        <div class="proceso__step reveal">
+          <div class="proceso__step-header">
+            <span class="proceso__step-num">II</span>
+            <h3 class="proceso__step-name">Propuesta de intervención</h3>
+          </div>
+          <p class="proceso__step-desc">
+            Diseñamos una estrategia específica para cada pieza. Decidimos qué conservar, qué recuperar y qué reinterpretar. Nada es azaroso; cada decisión responde a criterios estéticos y técnicos.
+          </p>
+          <div class="proceso__step-img proceso__step-img--2"></div>
+        </div>
+
+        <div class="proceso__step reveal">
+          <div class="proceso__step-header">
+            <span class="proceso__step-num">III</span>
+            <h3 class="proceso__step-name">Intervención artesanal</h3>
+          </div>
+          <p class="proceso__step-desc">
+            El trabajo manual tiene un lugar central. La madera se trabaja con herramientas y tiempos que la industria no puede replicar. Tiempo, conocimiento y dedicación invertidos en cada proyecto.
+          </p>
+          <div class="proceso__step-img proceso__step-img--3"></div>
+        </div>
+
+        <div class="proceso__step reveal">
+          <div class="proceso__step-header">
+            <span class="proceso__step-num">IV</span>
+            <h3 class="proceso__step-name">Entrega y continuidad</h3>
+          </div>
+          <p class="proceso__step-desc">
+            El objeto no termina su historia con nosotros; la continúa. Documentamos cada intervención y acompañamos al cliente en el cuidado de la pieza para las próximas décadas.
+          </p>
+          <div class="proceso__step-img proceso__step-img--4"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS / ANTES-DESPUÉS -->
+  <section class="proyectos" id="proyectos">
+    <div class="container">
+      <div class="proyectos__header">
+        <p class="section-eyebrow">Proyectos</p>
+        <h2 class="proyectos__title">
+          El antes y el <em>después.</em>
+        </h2>
+        <p class="proyectos__subtitle">
+          Cada transformación es evidencia de lo que es posible cuando el oficio se cruza con el criterio de diseño.
+        </p>
+      </div>
+      <div class="proyectos__grid">
+
+        <article class="proyecto-card reveal">
+          <div class="proyecto-card__comparison">
+            <div class="proyecto-card__before">
+              <div class="proyecto-card__img-ph proyecto-card__img-ph--before"></div>
+              <span class="proyecto-card__label">Antes</span>
+            </div>
+            <div class="proyecto-card__after">
+              <div class="proyecto-card__img-ph proyecto-card__img-ph--after"></div>
+              <span class="proyecto-card__label">Después</span>
+            </div>
+          </div>
+          <div class="proyecto-card__info">
+            <h3 class="proyecto-card__name">Mesa ratona · Roble americano</h3>
+            <p class="proyecto-card__detail">Recuperación estructural + cambio de acabado con aceite natural</p>
+          </div>
+        </article>
+
+        <article class="proyecto-card reveal">
+          <div class="proyecto-card__comparison">
+            <div class="proyecto-card__before">
+              <div class="proyecto-card__img-ph proyecto-card__img-ph--before-2"></div>
+              <span class="proyecto-card__label">Antes</span>
+            </div>
+            <div class="proyecto-card__after">
+              <div class="proyecto-card__img-ph proyecto-card__img-ph--after-2"></div>
+              <span class="proyecto-card__label">Después</span>
+            </div>
+          </div>
+          <div class="proyecto-card__info">
+            <h3 class="proyecto-card__name">Aparador · Cedro nacional</h3>
+            <p class="proyecto-card__detail">Restitución de herrajes originales + barniz al agua mate</p>
+          </div>
+        </article>
+
+        <article class="proyecto-card reveal">
+          <div class="proyecto-card__comparison">
+            <div class="proyecto-card__before">
+              <div class="proyecto-card__img-ph proyecto-card__img-ph--before-3"></div>
+              <span class="proyecto-card__label">Antes</span>
+            </div>
+            <div class="proyecto-card__after">
+              <div class="proyecto-card__img-ph proyecto-card__img-ph--after-3"></div>
+              <span class="proyecto-card__label">Después</span>
+            </div>
+          </div>
+          <div class="proyecto-card__info">
+            <h3 class="proyecto-card__name">Escritorio vintage · Nogal</h3>
+            <p class="proyecto-card__detail">Reparación de cajones + tapizado nuevo en cuero natural</p>
+          </div>
+        </article>
+
+      </div>
+      <div class="proyectos__cta-wrap">
+        <a href="#contacto" class="btn btn--primary">
+          Ver todos los proyectos
+          <span class="btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALES -->
+  <span id="sobre-raiz" style="position:absolute;top:-80px;"></span>
+  <section class="materiales" id="materiales">
+    <div class="container">
+      <div class="materiales__layout">
+        <div class="materiales__left reveal">
+          <p class="section-eyebrow">Materiales</p>
+          <h2 class="materiales__title">
+            Solo madera<br><em>maciza.</em><br>Solo especies<br>nobles.
+          </h2>
+          <p class="materiales__body">
+            La calidad de una restauración depende de la honestidad de los materiales. Por eso trabajamos únicamente con maderas macizas, sin sustitutos ni compuestos. Cada especie tiene su propio carácter, sus vetas, su peso y su historia.
+          </p>
+        </div>
+        <div class="materiales__right">
+          <div class="materiales__especies">
+            <div class="materiales__especie reveal">
+              <span class="materiales__especie-num">01</span>
+              <div>
+                <h4 class="materiales__especie-name">Nogal negro</h4>
+                <p class="materiales__especie-desc">Veta oscura y pronunciada. Alta dureza. Pieza de carácter.</p>
+              </div>
+            </div>
+            <div class="materiales__especie reveal">
+              <span class="materiales__especie-num">02</span>
+              <div>
+                <h4 class="materiales__especie-name">Roble americano</h4>
+                <p class="materiales__especie-desc">Estabilidad excepcional. Responde bien a todos los acabados.</p>
+              </div>
+            </div>
+            <div class="materiales__especie reveal">
+              <span class="materiales__especie-num">03</span>
+              <div>
+                <h4 class="materiales__especie-name">Cedro nacional</h4>
+                <p class="materiales__especie-desc">Aroma único, peso liviano. Nativo de la región noreste.</p>
+              </div>
+            </div>
+            <div class="materiales__especie reveal">
+              <span class="materiales__especie-num">04</span>
+              <div>
+                <h4 class="materiales__especie-name">Lapacho</h4>
+                <p class="materiales__especie-desc">Una de las maderas más duras de América. Color rojizo intenso.</p>
+              </div>
+            </div>
+            <div class="materiales__especie reveal">
+              <span class="materiales__especie-num">05</span>
+              <div>
+                <h4 class="materiales__especie-name">Pino Paraná</h4>
+                <p class="materiales__especie-desc">Madera blanda con veta limpia. Ideal para piezas de diseño moderno.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <div class="contacto__inner">
+        <p class="section-eyebrow section-eyebrow--light">Contacto</p>
+        <h2 class="contacto__title">
+          ¿Tenés una pieza<br>que merece <em>seguir</em><br>siendo contada?
+        </h2>
+        <p class="contacto__body">
+          Contanos sobre tu mueble. Compartí fotos, contexto, historia. Así podemos entender qué tiene y hacia dónde puede ir.
+        </p>
+        <div class="contacto__actions">
+          <a href="mailto:hola@raizmuebles.com" class="btn btn--light">
+            hola@raizmuebles.com
+            <span class="btn__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+          </a>
+          <a href="https://wa.me/5491100000000" target="_blank" rel="noopener" class="btn btn--outline-light">
+            WhatsApp
+            <span class="btn__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="contacto__info">
+          <div class="contacto__info-item">
+            <span class="contacto__info-label">Taller</span>
+            <span class="contacto__info-val">Villa del Parque, Buenos Aires</span>
+          </div>
+          <div class="contacto__info-item">
+            <span class="contacto__info-label">Horarios</span>
+            <span class="contacto__info-val">Lun–Vie · 9 a 18 hs</span>
+          </div>
+          <div class="contacto__info-item">
+            <span class="contacto__info-label">Visitas</span>
+            <span class="contacto__info-val">Con turno previo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__layout">
+        <div class="footer__brand">
+          <span class="footer__logo">RAÍZ</span>
+          <p class="footer__tagline">Restauración · Diseño · Buenos Aires</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#filosofia">Filosofía</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#materiales">Materiales</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Pinterest">Pinterest</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 RAÍZ · Todos los derechos reservados</p>
+        <p>Diseño web · <a href="#">By Studio</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
