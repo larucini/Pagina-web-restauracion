@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Raleway:wght@300;400;500;600&family=Trirong:ital,wght@0,700;0,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Raleway:wght@300;400;500;600;900&family=Trirong:ital,wght@0,700;0,900&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -34,7 +34,7 @@
   <!-- HERO -->
   <section class="hero" id="inicio">
 
-    <!-- Imagen de fondo del hero -->
+    <!-- Imagen de fondo full-bleed -->
     <img
       src="assets/hero-bg.png"
       alt=""
@@ -43,18 +43,17 @@
       fetchpriority="high"
     />
 
-    <!-- SVG "Raíz" animada de fondo -->
-    <div class="hero__raiz-bg" aria-hidden="true">
-      <img src="assets/raiz-word.svg" alt="" class="hero__raiz-svg" />
+    <!-- Título centrado verticalmente -->
+    <div class="hero__center">
+      <h1 class="hero__title">
+        <span class="hero__title--conservamos">CONSERVAMOS.</span>
+        <span class="hero__title--transformamos">TRANSFORMAMOS.</span>
+        <span class="hero__title--restauramos">Restauramos.</span>
+      </h1>
     </div>
 
-    <!-- Contenido izquierdo -->
-    <div class="hero__content">
-      <h1 class="hero__title">
-        <span class="hero__title--construimos">CONSTRUIMOS.</span>
-        <span class="hero__title--transformamos">TRANSFORMAMOS.</span>
-        <span class="hero__title--restauramos">RESTAURAMOS.</span>
-      </h1>
+    <!-- Descripción + botones anclados al pie izquierdo -->
+    <div class="hero__footer">
       <p class="hero__desc">
         RESTAURAMOS MUEBLES CON HISTORIA PARA DARLES<br>
         UNA NUEVA VIDA EN EL PRESENTE.
@@ -73,15 +72,6 @@
           </span>
         </a>
       </div>
-    </div>
-
-    <!-- Imagen mueble derecha -->
-    <div class="hero__image-wrap">
-      <img
-        src="assets/escritorio-hero.png"
-        alt="Escritorio de madera restaurado en taller RAÍZ"
-        class="hero__image"
-      />
     </div>
 
   </section>
