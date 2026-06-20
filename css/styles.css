@@ -275,8 +275,31 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding-top: 90px;     /* espacio para la nav */
+  padding-top: 90px;
   overflow: hidden;
+}
+
+/* ── Imagen de fondo del hero ──
+   z-index: -1 → debajo de todo: raiz-svg, contenido, imagen-mueble.
+   object-position: center bottom para mostrar el escritorio y las
+   herramientas; el amplio espacio vacío de la foto queda en la zona
+   del texto, garantizando legibilidad sin necesidad de overlay. */
+.hero__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: -1;
+  pointer-events: none;
+  /* entrada suave */
+  opacity: 0;
+  animation: heroBgIn 1.4s 0.1s ease forwards;
+}
+@keyframes heroBgIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* SVG "Raíz" de fondo */
@@ -285,7 +308,6 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   display: flex;
   align-items: center;
-  /* Centro-izquierda, como en la referencia */
   justify-content: flex-start;
   padding-left: clamp(1rem, 3vw, 3rem);
   pointer-events: none;
@@ -294,7 +316,7 @@ a { color: inherit; text-decoration: none; }
 .hero__raiz-svg {
   width: clamp(340px, 55vw, 720px);
   height: auto;
-  opacity: 0;                    /* empieza invisible */
+  opacity: 0;
   animation: raizDraw 2.2s 0.4s var(--ease-out-expo) forwards;
 }
 @keyframes raizDraw {
